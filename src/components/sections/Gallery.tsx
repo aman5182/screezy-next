@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion"
 
 const Gallery = () => {
@@ -10,34 +11,64 @@ const Gallery = () => {
     "https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd",
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
         <h1 className="text-4xl font-bold mb-4">Photo Gallery</h1>
         <p className="text-gray-600 dark:text-gray-400">Glimpses of our school life</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {images.map((image, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-            className="aspect-video rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            className="aspect-video rounded-lg overflow-hidden shadow-lg"
           >
             <img
               src={image}
               alt={`Gallery image ${index + 1}`}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover"
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }
