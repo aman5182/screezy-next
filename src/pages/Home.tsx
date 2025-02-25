@@ -1,8 +1,14 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
+import RoadMap from "../components/sections/RoadMap"
+import Features from "../components/sections/Features"
+import Offerings from "../components/sections/Offerings"
+import FuturePlans from "../components/sections/FuturePlans"
+import Admission from "../components/sections/Admission"
+import Gallery from "../components/sections/Gallery"
+import Contact from "../components/sections/Contact"
 
 const Home = () => {
   const images = [
@@ -33,72 +39,45 @@ const Home = () => {
               and bus tracking system.
             </p>
             <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90">
-              <Link to="/contact">Get Started <ArrowRight className="ml-2" /></Link>
+              <a href="#contact">Get Started <ArrowRight className="ml-2" /></a>
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Image Slider */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="aspect-video rounded-lg overflow-hidden"
-            >
-              <img
-                src={image}
-                alt={`School feature ${index + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+      {/* Features Preview */}
+      <section id="features">
+        <Features />
       </section>
 
-      {/* Features Preview */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold mb-4">Key Features</h2>
-            <p className="text-gray-600 dark:text-gray-400">
-              Discover what makes our system unique
-            </p>
-          </motion.div>
+      {/* Roadmap Section */}
+      <section id="roadmap">
+        <RoadMap />
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "RFID Attendance", description: "Automated student tracking" },
-              { title: "Bus Tracking", description: "Real-time location monitoring" },
-              { title: "Smart Reports", description: "Comprehensive analytics" },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm"
-              >
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      {/* What We Offer Section */}
+      <section id="offerings">
+        <Offerings />
+      </section>
+
+      {/* Future Plans Section */}
+      <section id="future-plans">
+        <FuturePlans />
+      </section>
+
+      {/* Admission Section */}
+      <section id="admission">
+        <Admission />
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery">
+        <Gallery />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <Contact />
       </section>
     </div>
   )

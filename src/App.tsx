@@ -7,13 +7,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Home from "./pages/Home";
-import RoadMap from "./pages/RoadMap";
-import Features from "./pages/Features";
-import Offerings from "./pages/Offerings";
-import FuturePlans from "./pages/FuturePlans";
-import Admission from "./pages/Admission";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import Attendance from "./pages/Attendance";
 import BusTracking from "./pages/BusTracking";
@@ -32,13 +25,6 @@ const App = () => (
           {/* Main Website Routes */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="roadmap" element={<RoadMap />} />
-            <Route path="features" element={<Features />} />
-            <Route path="offerings" element={<Offerings />} />
-            <Route path="future-plans" element={<FuturePlans />} />
-            <Route path="admission" element={<Admission />} />
-            <Route path="gallery" element={<Gallery />} />
-            <Route path="contact" element={<Contact />} />
           </Route>
           
           {/* Dashboard Routes */}

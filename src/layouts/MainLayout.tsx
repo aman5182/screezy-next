@@ -1,12 +1,13 @@
 
-import { Outlet, Link } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b">
+      <header className="border-b fixed top-0 w-full bg-white/80 backdrop-blur-md z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
@@ -14,7 +15,7 @@ const MainLayout = () => {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center"
             >
-              <Link to="/" className="text-xl font-bold">SchoolSystem</Link>
+              <a href="#" className="text-xl font-bold">SchoolSystem</a>
             </motion.div>
             
             <motion.div
@@ -22,13 +23,13 @@ const MainLayout = () => {
               animate={{ opacity: 1, y: 0 }}
               className="hidden sm:flex space-x-4"
             >
-              <Link to="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link>
-              <Link to="/features" className="hover:text-primary transition-colors">Features</Link>
-              <Link to="/offerings" className="hover:text-primary transition-colors">What We Offer</Link>
-              <Link to="/future-plans" className="hover:text-primary transition-colors">Future Plans</Link>
-              <Link to="/admission" className="hover:text-primary transition-colors">Admission</Link>
-              <Link to="/gallery" className="hover:text-primary transition-colors">Gallery</Link>
-              <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
+              <a href="#roadmap" className="hover:text-primary transition-colors">Roadmap</a>
+              <a href="#features" className="hover:text-primary transition-colors">Features</a>
+              <a href="#offerings" className="hover:text-primary transition-colors">What We Offer</a>
+              <a href="#future-plans" className="hover:text-primary transition-colors">Future Plans</a>
+              <a href="#admission" className="hover:text-primary transition-colors">Admission</a>
+              <a href="#gallery" className="hover:text-primary transition-colors">Gallery</a>
+              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </motion.div>
             
             <motion.div
@@ -43,7 +44,7 @@ const MainLayout = () => {
         </nav>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 pt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
