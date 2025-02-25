@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -64,13 +63,9 @@ const Contact = () => {
                 <Textarea placeholder="Your Message" className="min-h-[150px]" />
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Button 
-                  className="w-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Send Message
-                </Button>
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button className="w-full">Send Message</Button>
+                </motion.div>
               </motion.div>
             </CardContent>
           </Card>

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import ScrollToTop from "@/components/ScrollToTop"
 
 const MainLayout = () => {
   return (
@@ -94,6 +95,8 @@ const MainLayout = () => {
           </div>
         </div>
       </footer>
+
+      <ScrollToTop />
     </div>
   )
 }

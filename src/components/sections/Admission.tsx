@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -107,13 +106,9 @@ const Admission = () => {
         transition={{ delay: 0.6 }}
         className="text-center mt-8"
       >
-        <Button 
-          size="lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Start Application
-        </Button>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Button size="lg">Start Application</Button>
+        </motion.div>
       </motion.div>
     </div>
   )

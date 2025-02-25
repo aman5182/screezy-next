@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -114,13 +113,9 @@ const Offerings = () => {
                     </motion.li>
                   ))}
                 </ul>
-                <Button 
-                  className="w-full"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get Started
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button className="w-full">Get Started</Button>
+                </motion.div>
               </CardContent>
             </Card>
           </motion.div>
